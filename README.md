@@ -76,13 +76,21 @@ Simply double-click `run.bat` to start the app automatically!
 
 ## 🔑 Gemini API Configuration
 
-To use the AI explanation feature:
+### Option 1: Auto-configured (Default)
+The app comes with a demo API key pre-configured. Just open the app and it works!
 
+### Option 2: Use Your Own Key
 1. Get a **free API key** from [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. In the app interface, enter your API key in the configuration section at the top
-3. Click "Save" to activate AI-powered explanations
+2. In the app, click "Change" next to the API key status
+3. Enter your key and click "Save"
 
-**Note**: Your API key is stored locally in your browser session and is never sent to any server except Google's Gemini API.
+### Option 3: For Developers
+Edit `src/config/apiConfig.js` to change the default key:
+```javascript
+export const DEFAULT_GEMINI_API_KEY = 'your_key_here';
+```
+
+**Note**: API keys are stored in browser localStorage for convenience.
 
 ---
 
@@ -258,6 +266,37 @@ Contributions are welcome! Areas for improvement:
 
 ---
 
+## 🚀 Deployment
+
+### Deploy to Vercel (Free & Easy!)
+
+1. **Push to GitHub** (if not already):
+   ```bash
+   # Windows users: just run
+   push-to-github.bat
+   
+   # Or manually:
+   git init
+   git remote add origin https://github.com/thanhtung2719123/trillema.git
+   git add .
+   git commit -m "Initial commit"
+   git push -u origin main
+   ```
+
+2. **Deploy on Vercel**:
+   - Go to [vercel.com](https://vercel.com)
+   - Import the GitHub repository
+   - Click Deploy (zero configuration needed!)
+   - Done! Your app is live in 2-3 minutes
+
+**Live Demo**: Coming soon at `https://trillema.vercel.app`
+
+For detailed instructions, see:
+- [GITHUB_SETUP.md](./GITHUB_SETUP.md) - Push to GitHub
+- [DEPLOY.md](./DEPLOY.md) - Deploy to Vercel
+
+---
+
 ## 📄 License
 
 MIT License - feel free to use this for educational purposes.
@@ -275,10 +314,16 @@ MIT License - feel free to use this for educational purposes.
 
 ## 📞 Support
 
-For issues or questions:
-- Check the in-app help text
-- Review the AI explanations for economic concepts
-- Consult academic resources on the Impossible Trinity
+- **GitHub Issues**: [Report bugs](https://github.com/thanhtung2719123/trillema/issues)
+- **Documentation**: Check the comprehensive guides in this repo
+- **AI Explanations**: Use the in-app Gemini AI feature
+
+---
+
+## 🌟 Star This Project
+
+If you find this useful, please ⭐ star the repo at:
+**https://github.com/thanhtung2719123/trillema**
 
 ---
 

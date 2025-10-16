@@ -1,0 +1,169 @@
+.triangle-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.triangle-svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.triangle-edge {
+  stroke: #cbd5e0;
+  stroke-width: 3;
+  transition: all 0.3s ease;
+}
+
+.triangle-edge.active {
+  stroke: #4ade80;
+  stroke-width: 4;
+  animation: pulse-edge 2s infinite;
+}
+
+.triangle-edge.inactive {
+  stroke: #e2e8f0;
+  stroke-dasharray: 10, 5;
+}
+
+@keyframes pulse-edge {
+  0%, 100% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.6;
+  }
+}
+
+.triangle-node {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.triangle-node .node-circle {
+  fill: #ffffff;
+  stroke: #cbd5e0;
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.triangle-node.active .node-circle {
+  fill: #4ade80;
+  stroke: #22c55e;
+  stroke-width: 3;
+  filter: drop-shadow(0 0 10px rgba(74, 222, 128, 0.5));
+}
+
+.triangle-node.violated .node-circle {
+  fill: #ff6b6b;
+  stroke: #ef4444;
+  stroke-width: 3;
+  animation: pulse-node 1.5s infinite;
+}
+
+.triangle-node.violated.crisis .node-circle {
+  fill: #dc2626;
+  stroke: #991b1b;
+  animation: shake 0.5s infinite;
+}
+
+@keyframes pulse-node {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px rgba(255, 107, 107, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(255, 107, 107, 1));
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-2px, 2px);
+  }
+  75% {
+    transform: translate(2px, -2px);
+  }
+}
+
+.node-label {
+  fill: #1f2937;
+  font-size: 14px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.triangle-node.active .node-label {
+  fill: #ffffff;
+}
+
+.triangle-node.violated .node-label {
+  fill: #ffffff;
+}
+
+.warning-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.triangle-legend {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-size: 14px;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.legend-color.active {
+  background: #4ade80;
+}
+
+.legend-color.violated {
+  background: #ff6b6b;
+}
+
+@media (max-width: 768px) {
+  .triangle-container {
+    padding: 10px;
+  }
+
+  .node-label {
+    font-size: 12px;
+  }
+
+  .triangle-legend {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+

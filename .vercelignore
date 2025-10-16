@@ -1,0 +1,30 @@
+# Files to ignore during Vercel deployment
+
+# Development files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Testing
+/coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Documentation (optional - comment out if you want them deployed)
+# EXAMPLES.md
+# FAQ.md
+# QUICK_START.md
+# PROJECT_SUMMARY.md
+
+# Scripts
+run.bat
+
